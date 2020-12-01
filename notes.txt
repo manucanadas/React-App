@@ -1,0 +1,97 @@
+Users
+id
+name
+email
+
+
+Products
+id
+name
+description
+
+
+Services
+id
+secret_code
+user_id
+
+Products_Services
+product_id
+Service_id
+quantity
+
+
+npm run knex migrate:make users
+npm run knex migrate:make products
+npm run knex migrate:make services
+npm run knex migrate:make products_services
+
+
+npm run knex seed:make users
+npm run knex seed:make products
+npm run knex seed:make services
+npm run knex seed:make products_services
+
+
+Products API
+
+/api/products
+
+GET /
+
+Response
+[
+    {
+        "id": 1
+        "name": ""
+        "description": ""
+        "image": ""
+    }
+]
+
+/api/services
+
+POST /
+
+Request
+{
+    "name": ""
+    "email": ""
+    "products": [
+        { "id": 1, "quantity": 2 }
+    ]
+}
+
+Response
+{
+    "id": 5,
+    "secret_code": "Have a good trip"
+}
+
+
+Global State:
+
+{
+    products: [
+        {
+            id: 1
+            name: ""
+            description: ""
+            image: ""
+        }
+    ],
+    Cart: [
+        { product_id: 1, quantity: 2 }
+    ],
+    services: [
+        {
+            id: 1
+            name: ""
+            email: ""
+            products: [
+                { id: 1, quantity: 2}
+            ],
+            secret_code: "Have a good trip"
+        }
+    ]
+}
