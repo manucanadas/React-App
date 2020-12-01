@@ -21,16 +21,16 @@ Service_id
 quantity
 
 
-npm run knex migrate:make users
-npm run knex migrate:make products
-npm run knex migrate:make services
-npm run knex migrate:make products_services
+npx knex migrate:make users
+npx knex migrate:make products
+npx run knex migrate:make services
+npx run knex migrate:make products_services
 
 
-npm run knex seed:make users
-npm run knex seed:make products
-npm run knex seed:make services
-npm run knex seed:make products_services
+npx knex seed:make users
+npx knex seed:make products
+npx knex seed:make services
+npx knex seed:make products_services
 
 
 Products API
